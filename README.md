@@ -64,3 +64,8 @@ Tos stop docker conatiner
 
 docker stop <container_id>
 
+python setup.py install
+
+Install ipkernel
+
+pip install ipykernel
