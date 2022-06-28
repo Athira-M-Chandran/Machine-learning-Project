@@ -10,9 +10,10 @@
 5. [GIT Documentation](https://git-scm.com/docs/gittutorial)
 
 Creating conda environment
-'''
+
+```
 conda create -p venv python==3.7 -y
-'''
+```
 '''
 conda activate venv/
 '''
