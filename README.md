@@ -96,3 +96,7 @@ python setup.py install
 ```
 pip install ipykernel
 ```
+
+**Data Drift: When your datset stats gets change we call it as data drift**
+
+**Assignment : Write a function to get training file path from artifact dir**

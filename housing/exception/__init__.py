@@ -4,19 +4,31 @@ import sys
 class HousingException(Exception):
     
     def __init__(self, error_message:Exception,error_detail:sys):
-        super().__init__(error_message)
-        self.error_message=HousingException.get_detailed_error_message(error_message=error_message,
+        '''
+         error_message is like object of exception; instance of exception
+         sys module consists of all the details of error; in which file ,line no:
+        '''
+        
+        super().__init__(error_message) 
+        # this error message will pass to the __init__() of Exception class.
+        # above line equivalent to Exception(error_message)
+        
+        self.error_message = HousingException.get_detailed_error_message(error_message=error_message,
                                                                        error_detail=error_detail
                                                                         )
 
 
-    @staticmethod
+    @staticmethod # without creating object we can call the function using staticmethod
     def get_detailed_error_message(error_message:Exception,error_detail:sys)->str:
         """
         error_message: Exception object
         error_detail: object of sys module
         """
         _,_ ,exec_tb = error_detail.exc_info()
+        '''
+        exc_info() will return most recently occurred exception in three values, 
+        first 2 values are not needed so mentioned as _
+        '''
         exception_block_line_number = exec_tb.tb_frame.f_lineno
         try_block_line_number = exec_tb.tb_lineno
         file_name = exec_tb.tb_frame.f_code.co_filename
@@ -31,6 +43,6 @@ class HousingException(Exception):
     def __str__(self):
         return self.error_message
 
-
+    # __repr__ is the object representation
     def __repr__(self) -> str:
         return HousingException.__name__.str()

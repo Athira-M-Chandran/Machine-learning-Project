@@ -1,11 +1,12 @@
 # Your workflow name.
 name: Deploy to heroku.
-
+# trigger mentioned in the CICD pipeline
 # Run workflow on every push to main branch.
 on:
   push:
     branches: [main]
 
+# when trigger happens the following will happen
 # Your workflows jobs.
 jobs:
   build:

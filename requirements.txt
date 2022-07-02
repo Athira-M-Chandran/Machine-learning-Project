@@ -5,4 +5,8 @@ Flask
 gunicorn
 sklearn
 PyYAML
--e .
+evidently
+# -e . will search all the packages inn the current directory (. means current directory)
+# if wanted to install -e . , setup.py file is mandatory.
+-e . 
+

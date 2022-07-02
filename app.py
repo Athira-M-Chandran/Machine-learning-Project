@@ -13,6 +13,7 @@ def index():
         raise Exception("We are testing custom Exception")
     except Exception as e:
         housing = HousingException(e,sys)
+        # raise HousingException(e,sys) from e
         logging.info((housing.error_message))
         logging.info("We are testing loggiing module")
     return 'CI CD pipeline has been established'
